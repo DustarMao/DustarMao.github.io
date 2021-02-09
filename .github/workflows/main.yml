@@ -36,5 +36,8 @@ jobs:
       - run: yarn run export
 
       - name: Deploy
-        run: "git checkout gh-pages && git add . && git commit -m 'CI: deploy gh-pages' && git push"
+        uses: JamesIves/github-pages-deploy-action@4
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: out # The folder the action should deploy.
         
